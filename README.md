@@ -1,4 +1,4 @@
-# Bogotá Conecta — Proyecto académico
+# Bogotá Conecta 
 
 Frontend para consultar eventos culturales de Bogotá, organizado para consultar eventos culturales y sus detalles.
 
