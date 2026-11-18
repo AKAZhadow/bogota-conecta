@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bogotá Conecta: consulta eventos culturales de Bogotá.">
+  <title>Bogotá Conecta | Agenda cultural</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="top-strip">BOGOTÁ, COLOMBIA <span>·</span> CULTURA, ARTE Y COMUNIDAD</div>
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="Bogotá Conecta, inicio">
+      <span class="brand-icon">BC</span><span>Bogotá <b>Conecta</b></span>
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="active" href="#inicio">Inicio</a>
+      <a href="#eventos">Eventos culturales</a>
+      <a href="#experiencias">Descubre Bogotá</a>
+    </nav>
+    <button class="header-button" id="consultarEventosHeader" type="button">Consultar eventos culturales <span>↗</span></button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span class="eyebrow-line"></span> AGENDA CULTURAL DE LA CAPITAL</div>
+        <h1>Bogotá tiene<br><em>un plan para ti.</em></h1>
+        <p>Explora actividades culturales, encuentra nuevos espacios y descubre los eventos que conectan a nuestra ciudad.</p>
+        <button class="hero-button" id="consultarEventos" type="button">Consultar eventos culturales <span>↓</span></button>
+        <div class="hero-note"><span class="pulse"></span> Descubre. Conecta. Vive Bogotá.</div>
+      </div>
+      <div class="hero-caption"><span>01 / BOGOTÁ DESDE MONSERRATE</span><span>UNA CIUDAD LLENA DE HISTORIAS</span></div>
+    </section>
+
+    <section class="intro section-wrap">
+      <div>
+        <div class="section-kicker">DESCUBRE LA CIUDAD</div>
+        <h2>La cultura está<br><em>más cerca de lo que crees.</em></h2>
+      </div>
+      <p class="intro-copy">Bogotá Conecta reúne eventos culturales registrados para que puedas consultar su información de forma sencilla: nombre, descripción, fecha y ubicación.</p>
+    </section>
+
+    <section class="events-section section-wrap" id="eventos">
+      <div class="section-title-row">
+        <div>
+          <div class="section-kicker">EXPLORA LA AGENDA</div>
+          <h2>Eventos culturales</h2>
+          <p class="section-subtitle">Selecciona un evento del listado para consultar su información.</p>
+        </div>
+        <div class="event-total"><strong id="totalEvents">09</strong><span>EVENTOS<br>REGISTRADOS</span></div>
+      </div>
+
+      <div class="demo-notice"><strong>Datos demostrativos:</strong> los siguientes eventos son ejemplos académicos y no representan una agenda vigente confirmada.</div>
+
+      <div class="list-heading">
+        <div><span class="list-dot"></span><strong>Visualizar listado de eventos culturales</strong></div>
+        <span id="resultsCount">Mostrando 9 eventos</span>
+      </div>
+      <div id="eventsGrid" class="events-grid" aria-live="polite"></div>
+      <div id="emptyState" class="empty-state" hidden><h3>No hay eventos culturales disponibles en este momento</h3></div>
+    </section>
+
+    <section class="selected-event-section section-wrap" id="detallesEvento" hidden aria-live="polite">
+      <div class="section-kicker">EVENTO SELECCIONADO</div>
+      <h2>Detalles del evento</h2>
+      <article class="selected-event-card">
+        <div><span class="event-category" id="selectedCategory"></span><h3 id="selectedName"></h3><p id="selectedDescription"></p>
+          <div class="selected-meta"><span><b>FECHA</b><strong id="selectedDate"></strong></span><span><b>UBICACIÓN</b><strong id="selectedLocation"></strong></span></div>
+          <button class="solid-button" id="consultarDetallesEvento" type="button">Consultar detalles del evento</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="how-section">
+      <div class="section-wrap">
+        <div class="section-kicker light">¿CÓMO FUNCIONA?</div>
+        <h2>Consultar un evento<br><em>es muy sencillo.</em></h2>
+        <div class="steps">
+          <article class="step"><span>01</span><div class="step-icon">⌕</div><h3>Consultar eventos culturales</h3><p>Busca por nombre o filtra por categoría para encontrar actividades culturales.</p></article>
+          <article class="step"><span>02</span><div class="step-icon">▤</div><h3>Visualizar listado</h3><p>Revisa los eventos disponibles con su fecha, categoría y ubicación.</p></article>
+          <article class="step"><span>03</span><div class="step-icon">↗</div><h3>Seleccionar un evento</h3><p>Presiona «Ver detalles» para seleccionar el evento que te interesa.</p></article>
+          <article class="step"><span>04</span><div class="step-icon">i</div><h3>Consultar detalles del evento</h3><p>Conoce la descripción, fecha y ubicación del evento seleccionado.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experiences-section section-wrap" id="experiencias">
+      <div class="experiences-heading">
+        <div>
+          <div class="section-kicker">BOGOTÁ PARA DESCUBRIR</div>
+          <h2>Una ciudad llena de<br><em>planes y experiencias.</em></h2>
+        </div>
+        <p>La cultura se encuentra en sus escenarios, sus espacios de encuentro y las historias que comparten quienes viven la ciudad.</p>
+      </div>
+
+      <div class="experiences-grid">
+        <article class="experience-card experience-art">
+          <div class="experience-artwork"><span>01</span><strong>ARTE<br>Y PATRIMONIO</strong></div>
+          <div class="experience-copy">
+            <h3>Historias que inspiran</h3>
+            <p>Conoce exposiciones, museos y espacios que conservan la memoria y creatividad de Bogotá.</p>
+          </div>
+        </article>
+        <article class="experience-card experience-music">
+          <div class="experience-artwork"><span>02</span><strong>MÚSICA<br>Y ENCUENTROS</strong></div>
+          <div class="experience-copy">
+            <h3>Ritmos para compartir</h3>
+            <p>Descubre conciertos, festivales y propuestas musicales que reúnen diferentes sonidos.</p>
+          </div>
+        </article>
+        <article class="experience-card experience-stage">
+          <div class="experience-artwork"><span>03</span><strong>TEATRO<br>Y LITERATURA</strong></div>
+          <div class="experience-copy">
+            <h3>Ideas que toman vida</h3>
+            <p>Acércate a obras, lecturas y encuentros donde las historias conectan a la comunidad.</p>
+          </div>
+        </article>
+      </div>
+      <div class="experiences-note">Explora el listado de eventos y encuentra una experiencia para tu próximo plan en Bogotá.</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#inicio"><span class="brand-icon">BC</span><span>Bogotá <b>Conecta</b></span></a>
+    <span>Proyecto académico · Lenguaje de Modelado 5C</span>
+    <span>© 2026 Bogotá Conecta</span>
+  </footer>
+
+  <div class="modal-backdrop" id="eventModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <article class="modal">
+      <button class="modal-close" id="closeModal" aria-label="Cerrar ventana">×</button>
+      <div class="modal-top"><span class="modal-tag">DETALLES DEL EVENTO</span><span class="modal-symbol">BC.</span></div>
+      <div class="modal-content">
+        <span class="event-category" id="modalCategory"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <div class="modal-detail"><span class="detail-icon">▦</span><div><small>FECHA DEL EVENTO</small><strong id="modalDate"></strong></div></div>
+        <div class="modal-detail"><span class="detail-icon">⌖</span><div><small>UBICACIÓN</small><strong id="modalLocation"></strong></div></div>
+        <button class="solid-button full-button" id="modalDone">Cerrar detalles</button>
+      </div>
+    </article>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
